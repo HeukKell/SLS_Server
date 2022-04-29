@@ -1,0 +1,62 @@
+### 글 작성하기
+POST http://localhost:4000/writing
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJUZXN0SUQiLCJuaWNrbmFtZSI6Im5ld2JpZSIsImlhdCI6MTY1MDg0NjE1NX0.LVQJvi_VsbdCoqBsuTNW9YKH6gr4C7MncA4yKFRFwy0
+Content-Type: application/json
+
+{
+  "title": "Newbie3",
+  "content": "YesYesYes22333332"
+}
+
+### 글 ID로 조회하기
+GET http://localhost:4000/writing/62610c9b4032665a9a8e17f1
+
+### 모든 글 가져오기
+GET http://localhost:4000/writing
+
+### 좋아요 달기
+POST http://localhost:4000/writing/like
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1bmtub3duIiwibmlja25hbWUiOiJ1bmtub3duIiwiaWF0IjoxNjUwODQ4MjQzfQ.f-rhOIiIjS2Qp4eYzZt8lL150SGL7MXVt1hnRqL0nkk
+Content-Type: application/json
+
+{
+  "writingId": "6265f5b641bcab0bee62fe70"
+}
+
+### 댓글달기
+POST http://localhost:4000/writing/comment
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1bmtub3duIiwibmlja25hbWUiOiJ1bmtub3duIiwiaWF0IjoxNjUwODQ4MjQzfQ.f-rhOIiIjS2Qp4eYzZt8lL150SGL7MXVt1hnRqL0nkk
+Content-Type: application/json
+
+{
+  "writingId": "6265f5b641bcab0bee62fe70",
+  "comment": "Goooo2222d"
+}
+
+### 컨트랙트 배포
+POST http://localhost:4000/deploy
+Content-Type: application/json
+
+{
+  "userId": "admin",
+  "password": "admin"
+}
+
+### 로그인
+POST http://localhost:4000/account/login
+Content-Type: application/json
+
+{
+  "userId": "unknown",
+  "password": "unknown"
+}
+
+### 회원가입
+POST http://localhost:4000/account
+Content-Type: application/json
+
+{
+  "userId": "TestID",
+  "password": "test",
+  "nickname": "newbie"
+}
